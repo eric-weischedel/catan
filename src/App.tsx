@@ -18,7 +18,7 @@ function App() {
             x={125}
             y={125}
             sides={6}
-            radius={100}
+            radius={95}
             rotationDeg={90}
             fill="deepskyblue"
           />
@@ -26,15 +26,15 @@ function App() {
 
         {/* Tiles */}
         <Layer>
-          <Hexagon x={102.5} y={87} />
-          <Hexagon x={147.5} y={87} />
+          <Hexagon x={103} y={87} />
+          <Hexagon x={147} y={87} />
 
-          <Hexagon x={80} y={125} />
+          <Hexagon x={81} y={125} />
           <Hexagon x={125} y={125} isDesert />
-          <Hexagon x={170} y={125} />
+          <Hexagon x={169} y={125} />
 
-          <Hexagon x={102.5} y={163} />
-          <Hexagon x={147.5} y={163} />
+          <Hexagon x={103} y={163} />
+          <Hexagon x={147} y={163} />
         </Layer>
 
         {/* Robber */}
