@@ -8,7 +8,7 @@ interface Props {
   isDesert?: true;
 }
 
-export default function Hexagon(props: Props) {
+export default function Tile(props: Props) {
   const fill = props.isDesert ? "navajowhite" : getRandomColor();
   return (
     <Group>

@@ -1,5 +1,5 @@
 import React from "react";
-import Hexagon from "./components/Hexagon";
+import Tile from "./components/Tile";
 import { Circle, Layer, RegularPolygon, Stage } from "react-konva";
 
 const WIDTH = 1920;
@@ -26,15 +26,15 @@ function App() {
 
         {/* Tiles */}
         <Layer>
-          <Hexagon x={103} y={87} />
-          <Hexagon x={147} y={87} />
+          <Tile x={103} y={87} />
+          <Tile x={147} y={87} />
 
-          <Hexagon x={81} y={125} />
-          <Hexagon x={125} y={125} isDesert />
-          <Hexagon x={169} y={125} />
+          <Tile x={81} y={125} />
+          <Tile x={125} y={125} isDesert />
+          <Tile x={169} y={125} />
 
-          <Hexagon x={103} y={163} />
-          <Hexagon x={147} y={163} />
+          <Tile x={103} y={163} />
+          <Tile x={147} y={163} />
         </Layer>
 
         {/* Robber */}
