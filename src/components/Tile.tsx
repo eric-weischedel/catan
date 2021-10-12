@@ -1,40 +1,27 @@
-import React from "react";
-import { RegularPolygon, Group, Circle, Text } from "react-konva";
-import getRandomColor from "../lib/getRandomColor";
+import { RegularPolygon, Group, Text } from 'react-konva';
+import { Tile as TileData } from '../data/generateBoard';
 
 interface Props {
   x: number;
   y: number;
-  isDesert?: true;
+  tile: TileData | null;
+  isOffset: boolean;
 }
 
 export default function Tile(props: Props) {
-  const fill = props.isDesert ? "navajowhite" : getRandomColor();
+  const offset = props.isOffset ? -15 : -10;
+
   return (
-    <Group>
+    <Group x={props.x} y={props.y} offsetX={offset} offsetY={-10}>
       <RegularPolygon
-        x={props.x}
-        y={props.y}
         sides={6}
-        radius={25}
-        fill={fill}
-        stroke="beige"
-        strokeWidth={2}
+        radius={5}
+        fill={props.tile?.color}
+        onMouseDown={function (event) {
+          console.log(JSON.stringify(event.target, null, 2));
+        }}
       />
-      {!props.isDesert && (
-        <>
-          <Circle x={props.x} y={props.y} fill="beige" radius={10} />
-          <Text
-            x={props.x - 3}
-            y={props.y - 4}
-            text={`${Math.ceil(Math.random() * 6)}`}
-            align="center"
-            verticalAlign="middle"
-            fontSize={10}
-            fontStyle="bold"
-          />
-        </>
-      )}
+      <Text text={props.tile?.number?.toString()} fontSize={2} />
     </Group>
   );
 }

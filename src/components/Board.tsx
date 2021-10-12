@@ -1,34 +1,11 @@
-import { Stage, Layer } from "react-konva";
-import getRandomTile from "../lib/getRandomTile";
-import Tile from "./NewTile";
-import { useState } from "react";
-
-export enum TileType {
-  Forest,
-  Hill,
-  Pasture,
-  Field,
-  Mountain,
-  Ocean,
-}
-
-export interface TileData {
-  type: TileType;
-  number?: number;
-}
-
-const ocean = { type: TileType.Ocean };
-const data: Array<TileData | null>[] = [
-  [null, ocean, ocean, ocean, null],
-  [ocean, getRandomTile(), getRandomTile(), ocean],
-  [ocean, getRandomTile(), getRandomTile(), getRandomTile(), ocean],
-  [ocean, getRandomTile(), getRandomTile(), ocean],
-  [null, ocean, ocean, ocean, null],
-];
+import { Stage, Layer } from 'react-konva';
+import Tile from './Tile';
+import { useState } from 'react';
+import generateBoard, { Resource } from '../data/generateBoard';
 
 export default function Board() {
   const [dice, setDice] = useState<[number, number] | null>(null);
-  const [board] = useState(data);
+  const [board] = useState(generateBoard());
 
   function roll() {
     const die1 = Math.ceil(Math.random() * 6);
@@ -41,7 +18,7 @@ export default function Board() {
     for (const row of board) {
       for (const tile of row) {
         if (tile?.number === number) {
-          console.log(number, TileType[tile.type]);
+          console.log(number, Resource[tile.resource!]);
         }
       }
     }
@@ -51,9 +28,9 @@ export default function Board() {
     <>
       <button
         style={{
-          width: "100px",
-          height: "100px",
-          fontSize: "24px",
+          width: '100px',
+          height: '100px',
+          fontSize: '24px',
         }}
         onClick={roll}
       >
@@ -62,7 +39,7 @@ export default function Board() {
 
       <Stage width={1000} height={1000} scale={{ x: 10, y: 10 }}>
         <Layer>
-          {data.map((row, y) =>
+          {board.map((row, y) =>
             row.map((tile, x) => {
               return (
                 <Tile
