@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.js": "/catan/static/js/main.d3757bdd.chunk.js",
+    "main.js.map": "/catan/static/js/main.d3757bdd.chunk.js.map",
+    "runtime-main.js": "/catan/static/js/runtime-main.3cc7bedd.js",
+    "runtime-main.js.map": "/catan/static/js/runtime-main.3cc7bedd.js.map",
+    "static/js/2.a3e7557c.chunk.js": "/catan/static/js/2.a3e7557c.chunk.js",
+    "static/js/2.a3e7557c.chunk.js.map": "/catan/static/js/2.a3e7557c.chunk.js.map",
+    "index.html": "/catan/index.html",
+    "static/js/2.a3e7557c.chunk.js.LICENSE.txt": "/catan/static/js/2.a3e7557c.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3cc7bedd.js",
+    "static/js/2.a3e7557c.chunk.js",
+    "static/js/main.d3757bdd.chunk.js"
+  ]
+}
